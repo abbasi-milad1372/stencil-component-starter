@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'yekan';
+    src:  url('fonts/eot/iranyekanwebmediumfanum.eot') format('eot');
+    src:  url('fonts/ttf/iranyekanwebmediumfanum.ttf') format('truetype'),
+      url('fonts/woff/iranyekanwebmediumfanum.woff') format('woff'),
+      url('fonts/svg/iranyekanwebmediumfanum.svg') format('svg');
+   
+  }
+  :host{
+    font-family: 'yekan';
+  }
+  

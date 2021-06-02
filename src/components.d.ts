@@ -20,6 +20,18 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface PostListDesktop {
+        "data": string[];
+        "image": string;
+        "imageAss": string;
+        "type": string;
+    }
+    interface PostListMain {
+    }
+    interface PostListMobile {
+        "image": string;
+        "imageAss": string;
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +40,29 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLPostListDesktopElement extends Components.PostListDesktop, HTMLStencilElement {
+    }
+    var HTMLPostListDesktopElement: {
+        prototype: HTMLPostListDesktopElement;
+        new (): HTMLPostListDesktopElement;
+    };
+    interface HTMLPostListMainElement extends Components.PostListMain, HTMLStencilElement {
+    }
+    var HTMLPostListMainElement: {
+        prototype: HTMLPostListMainElement;
+        new (): HTMLPostListMainElement;
+    };
+    interface HTMLPostListMobileElement extends Components.PostListMobile, HTMLStencilElement {
+    }
+    var HTMLPostListMobileElement: {
+        prototype: HTMLPostListMobileElement;
+        new (): HTMLPostListMobileElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "post-list-desktop": HTMLPostListDesktopElement;
+        "post-list-main": HTMLPostListMainElement;
+        "post-list-mobile": HTMLPostListMobileElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +80,23 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface PostListDesktop {
+        "data"?: string[];
+        "image"?: string;
+        "imageAss"?: string;
+        "type"?: string;
+    }
+    interface PostListMain {
+    }
+    interface PostListMobile {
+        "image"?: string;
+        "imageAss"?: string;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "post-list-desktop": PostListDesktop;
+        "post-list-main": PostListMain;
+        "post-list-mobile": PostListMobile;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +104,9 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "post-list-desktop": LocalJSX.PostListDesktop & JSXBase.HTMLAttributes<HTMLPostListDesktopElement>;
+            "post-list-main": LocalJSX.PostListMain & JSXBase.HTMLAttributes<HTMLPostListMainElement>;
+            "post-list-mobile": LocalJSX.PostListMobile & JSXBase.HTMLAttributes<HTMLPostListMobileElement>;
         }
     }
 }

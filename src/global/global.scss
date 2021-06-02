@@ -1,0 +1,56 @@
+
+
+/** global styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  
+.dir{
+    direction: rtl;
+}
+  
+  /* grid styles */
+  .container-fluid {
+    max-width: 100%;
+    display: flex;
+  }
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+  }
+  .col {
+    background-color: pink;
+    border: LavenderBlush 2px solid;
+    border-radius: 8px;
+    padding: 16px;
+  }
+  $columns: 24; // number of columns in the grid system
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+  @for $width from 1 through $columns {
+    .col-#{$width} {
+      flex-basis: $width / $columns * 100%;
+    }  
+  }
+
+  /*
+   mobile: 360 to 1280
+   desktop: 1280 to 1920 
+ */
+ @media (max-width:800px){
+    @for $width from 1 through $columns {
+        .col-#{$width} {
+          flex-basis: 100%;
+        }  
+      } 
+ }
+
